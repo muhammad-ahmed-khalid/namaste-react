@@ -1,0 +1,33 @@
+ "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+
+yeh package.json mai hm scripts bana kay rakhty hain jo hamy run karni hoti hy is case mai hm project ko is trha run karien gy ( like short cut )
+
+npm run start
+
+JSX is not a part of react
+we can write react without JSX
+JSX is not HTML in JS , jsx is like HTML syntax
+
+// these both are same
+const heading = React.createElement("h1", {id: "heading"}, "Hello");
+// these both are same --- (transpiled) this code converted into a code which browser can understand & transpiled is done by PARCEL----
+or parcel yh kaam khud nahi karta hy parcel yeh kaam babel sy karwata hy
+const jsxHeading = <h1 id="heading">Ao</h1>
+
+js engine will not understand this code: const jsxHeading = <h1 id="heading">Ao</h1>
+
+ES6 this what js is and JS engine will understand this and all its ver and this is understand by your browser
+
+
+React.createElement => ReactElement-JS object => HTMLElement(render)
+JSX => React.createElement => ReactElement-JS Object => HTMLElement(render)
+
+Babel is converting your jsx code to React.createElement
+
+
+
+

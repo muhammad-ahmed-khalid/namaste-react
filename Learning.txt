@@ -1,0 +1,144 @@
+useCallback =  return its function when dep change
+useMemo = return its result when dep change
+
+Hooks:
+
+Basic Hooks:
+1) useState
+2) useEffect
+3) useContext { ON }
+
+Additional Hooks:
+1) useReducer
+2) useCallback
+3) useMemo
+4) useRef
+5) useImperativeHandle
+
+ useContext ka use:
+1) const ComponentContext = React.createContext();
+2) <ComponentContext.Provider value="Ao"> {child} </ComponentContext.Provider>
+3)  const name = useContext(ComponentContext);
+
+Explain : A -> B -> C agar A sy data C mai send krna hy toh props sy hojie ga but props Drilling hojie gi q kay B ky pass is prop ka koie kaam nahi hy but phir be usko prop laiky agy bhjna parh rhi hy toh direct global level sy context ko use kar skty hain.
+
+ useMemo:
+const memoizedValue = useMemo(() => merFunc(),[])
+useMemo return karta hy data
+https://www.youtube.com/watch?v=m1qx9MsnE_4&list=PLkMY2Sn6ZX3m_YIbwL8vNos98pkpeIzaD&index=36
+this is smallest Example of useMemo
+
+ useCallback:
+const memoizedCallBack = useCallback(() => {
+merFunc()
+},[]);
+https://www.youtube.com/watch?v=9IfOu7jvqz8&list=PLkMY2Sn6ZX3m_YIbwL8vNos98pkpeIzaD&index=37
+
+ useRef :
+useRef sy phly Controlled Component 
+
+HOC: Higi Order Component:-
+Simple Def:
+ek component jo dusray component ko as an props lyta ho or or alag sy ek component return karta ho
+https://www.youtube.com/watch?v=Fbrsn97jPmo
+
+
+useImperativeHandle:
+child to parent mai agar function ka kxh be bhjwana hy to use hota hy 
+useImperativeHandle(ref, createhandle , [dep])
+
+
+
+
+Function :
+a(); // 
+b();
+
+a b mai diff hoisting ka hy, a call hojie ga is case mai but b nahi hota error aye ga q ky
+ b ek variable ki trha treat hota hy b undefiend save hojige ga initially until the code excute to line of this code.
+ 
+1) Function Statement:-
+Function Statement is also know as function declaration,
+
+function a() {
+console.log("a called")
+}
+
+2) Function Expression:-
+var b = function b() {
+console.log("b called")
+}
+
+
+3) Name Function Expression:
+var b = function c () {
+console.log("c called")
+}
+
+
+const myFun = (params1, params2) => {
+
+}
+
+myFun(arg1,arg2)
+
+
+
+
+FUNCTIONS:
+https://www.youtube.com/watch?v=SHINoHxvTso&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=16
+ 
+1) Function Statement:
+function a(){
+	console.log("A")
+}
+this is called Function Statement.
+
+2) Function Expression:
+var b = function () {
+console.log("b")
+}
+this is called Function Expression.
+
+Diff between in these two 1 and 2 points:
+major diff hy hoisting ka, 
+so the memory allocation phase 
+
+a() assign hojta hy memory ky ander pura ka pura 
+b() is case mai yeh ek variable ko function assign hota hy tbhi wo var starting mai (memory allocation phase) ky ander undefined retha hy
+
+Function Decleration and Function Statement are same,
+
+Anonymous Function:
+yeh wo function hota hy jiska koie naam nahi hota,
+function () {} but hm isko is trha use nai kar skty
+
+Name Function Expression:
+var b = function () {
+console.log("b")
+}
+yaha par varb b ko jo fucntion assign hua wa hy wo anonymous function hy but agar hm isi function ko name dy daien toh yeh name function expression ban jaie ga
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

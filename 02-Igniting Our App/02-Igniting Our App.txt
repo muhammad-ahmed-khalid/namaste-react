@@ -1,0 +1,49 @@
+NPM:
+node package manager is wrong,
+npm packages ko manage karta hy but iski full form node package manager nahi hy
+package.json is a config for npm
+most important package in our project is a bundler
+bundler is basically bundle your app before going it to production
+agar create-react-app ki bat krien toh yeh behind the scene webpack ko use karti hy
+two dep hoti hy
+1) dev dep
+2) normal dep
+dev dep it is req for when we devel our app
+but normal dep is use in production also
+
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  }
+
+"^2.10.3" ^ yeh jo sign hy isko caret(^) bolty hain ham isko jaga tilde(~) be daal skty hain
+caret(^): jab minor upate aye gi 2.10.3 like 2.10.5 toh yeh update krdyga
+tilde(~): jab major upate aye gi 2.10.3 like 2.12.3 toh yeh update krdyga
+
+if you have package.json nad package-lock.json then it will regenerate your node_moudles
+
+npx parcel index.html
+yeh karay ga yh ky hamray liye local server bana dayga like:  http://localhost:1234
+
+npm ( if you wanna install a package then use npm )
+npx means executing our package
+
+
+
+Parcel:
+dev build
+local Server
+HMR = Hot moudle Replacement
+file wathcing Algorithm - written in C++
+Caching -faster Builds
+image Opt
+minification
+Bundling
+compress
+consistent Hasing
+code splitting
+Differedntial Bundling - support older browsers
+Diagnostic
+Error Handling
+HTTPs
+Tree Shaking - remove unsued Code
+Differen dev and prod bundles
