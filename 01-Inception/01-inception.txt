@@ -1,0 +1,87 @@
+brower ky ander javascript engine hota hy tbhi wo createElement yeh sb read kr pata hy usko ppata chal jata hy ky yeh kia chz hy
+
+<div id="root"></div>
+
+html:5 -> Generate HTML basic structure for you
+
+  const root = document.getElementById('root');
+        const heading = document.createElement('h1');
+        heading.innerHTML = 'Ao Shi Tung';   
+        root.appendChild(heading);
+
+but brower ko nahi pata react kia hy, 
+CDN = Content Delivery Network,
+
+what is crossorigin in this CDN:
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+explain: 
+The crossorigin attribute is set to an empty string (""). This means that the browser should perform a CORS (Cross-Origin Resource Sharing) request, which allows the external scripts to be loaded from a different origin than the one that served the HTML page.
+
+If you're loading resources from a different domain, and the server hosting those resources doesn't include the necessary CORS headers, the browser may block the request. Setting crossorigin to an empty string is a way of indicating that the resource is expected to support CORS. If the attribute is omitted or set to "anonymous", the browser may block the request if the server doesn't include the appropriate CORS headers. If set to "use-credentials", the browser includes credentials (like cookies) with the request.
+
+In the context of your script tags, it's used to ensure that the React and React DOM scripts are loaded properly from the specified URLs.
+
+
+agar cdn sy react app my kaam karna hy toh body kay ander last mai <script> tag ky ander kxh is trha krna hy
+/////////////////////////////////// tag, attr,  val 
+cosnt heading = React.createElement("h1", {}, "This is my React") 
+cosnt root = ReactDOM.createRoot("root")
+
+root.render(heading)
+
+most costly expensive operation in web page is when the DOM need to be manuplated
+
+React Elemnet is nothing but a normal js object
+
+
+root.render(heading)
+jab hm root.render ko heading(JS object) dyty hain toh yeh object laiky isko Tag banata hy taky Browser isko understand kr sky
+
+agar core react use krky bnaie gy toh 
+output structure like this:
+<div id="parent">
+	<div id="child">
+		<h1>h1 hy yeh</h1>
+		<h2>h2 hy yeh</h2>
+	</div>
+	<div id="child2">
+		<h1>h1 hy yeh</h1>
+		<h2>h2 hy yeh</h2>
+	</div>
+</div>
+
+React Core will do this same thing like this:
+
+React.createElemnet = "Tag ata hy is mai" , "attr ata hy" , "child yah val ati hy or agar is mai [] Array daiky kxh dall do gy toh siblings create hojie gy"
+const parent = React.createElemnet("div", {id: "parent"},
+[
+React.createElemnet("div", {id: "child"}, [
+React.createElemnet("h1", {}, "h1 hy yeh"),
+React.createElemnet("h2", {}, "h2 hy yeh")
+]),
+React.createElemnet("div", {id: "child2"}, [
+React.createElemnet("h1", {}, "h1 hy yeh"),
+React.createElemnet("h2", {}, "h2 hy yeh")
+])
+]
+ )
+
+yeh core of react hy
+is trha ky chuityape ky code ki wja sy jsx hy taky easy to understand hojie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
